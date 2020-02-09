@@ -13,3 +13,5 @@ bitfinexDepth=Depth of order book(for Bitfinex has to be more than 25!)
 ```
 
 Run from Main class - can adjust log level from logback.xml in resources - by default only logs aggregated book to console and will log all messages to a log file in /logs/
+
+Use Maven clean install to get all dependencies before running
