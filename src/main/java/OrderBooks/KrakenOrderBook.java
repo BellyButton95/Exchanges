@@ -33,7 +33,7 @@ public class KrakenOrderBook extends ExchangeOrderBook {
         }
     }
 
-    private synchronized void createCache(Double[][] prices, List<Double> sortedPrices, Map<Double, Double> pricesMap) {
+    private void createCache(Double[][] prices, List<Double> sortedPrices, Map<Double, Double> pricesMap) {
         sortedPrices.clear();
         pricesMap.clear();
         for(int i = 0; i < prices.length; i++) {
@@ -61,7 +61,7 @@ public class KrakenOrderBook extends ExchangeOrderBook {
 
     }
 
-    private synchronized void updateCache(Double[][] update, List<Double> sortedPrices, Map<Double, Double> pricesMap, Side side) {
+    private void updateCache(Double[][] update, List<Double> sortedPrices, Map<Double, Double> pricesMap, Side side) {
         for (int i = 0; i < update.length; i++) {
             double price = update[i][0];
             double qty = update[i][1];

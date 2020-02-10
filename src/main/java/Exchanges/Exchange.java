@@ -17,16 +17,12 @@ public abstract class Exchange {
         this.request = SubscriptionRequestFactory.getSubsriptionRequest(id);
     }
 
-    public void onEvent(CharSequence data) {
+    public synchronized void onEvent(CharSequence data) {
         if (orderBook.isInitialized()) {
             orderBook.onUpdate(data);
         } else {
             orderBook.onInit(data);
         }
-    }
-
-    public void onClose() {
-
     }
 
     public String getId() { return id; }

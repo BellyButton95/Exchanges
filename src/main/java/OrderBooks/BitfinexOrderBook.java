@@ -30,7 +30,7 @@ public class BitfinexOrderBook extends ExchangeOrderBook {
         }
     }
 
-    private synchronized void createCache(Double[][] prices) {
+    private void createCache(Double[][] prices) {
         sortedBids.clear();
         sortedAsks.clear();
         bidsMap.clear();
@@ -65,7 +65,7 @@ public class BitfinexOrderBook extends ExchangeOrderBook {
 
     }
 
-    private synchronized void updatePrice(Double[] update) {
+    private void updatePrice(Double[] update) {
         double price = update[0];
         double qty = update[2];
         if(NumberUtils.isValidQtyInclNegative(qty) && NumberUtils.isValidPrice(price)) {
